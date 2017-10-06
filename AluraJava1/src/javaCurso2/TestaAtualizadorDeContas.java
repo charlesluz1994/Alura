@@ -2,8 +2,8 @@ package javaCurso2;
 
 public class TestaAtualizadorDeContas {
 
-    public static void main(String[] args) {
-        Conta c = new Conta();
+	public static void main(String[] args) {
+		Conta c = new ContaCorrente();
         Conta cc = new ContaCorrente();
         Conta cp = new ContaPoupanca();
 
@@ -18,6 +18,5 @@ public class TestaAtualizadorDeContas {
         adc.roda(cp);
 
         System.out.println("Saldo Total: " + adc.getSaldoTotal());
-    }
-
+	}
 }
