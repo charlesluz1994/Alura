@@ -1,22 +1,22 @@
 package javaCurso2;
 
+import Excecoes.SaldoInsuficienteException;
+
 public class TestaContas {
 
-	public static void main(String[] args) {
-		Conta c = new ContaCorrente();
-		Conta cc = new ContaCorrente();
-		Conta cp = new ContaPoupanca();
-		
-        c.deposita(1000); 
-        cc.deposita(1000); 
-        cp.deposita(1000);
+		  public static void main(String[] args) {
 
-        c.atualiza(0.01);
-        cc.atualiza(0.01);
-        cp.atualiza(0.01);
+		      Conta joao = new ContaCorrente();
+		      joao.deposita(50.0);
+		  try {
+		      joao.saca(100.0);
+		   } catch(SaldoInsuficienteException e) {
+		        System.out.println("Saldo está insuficiente: " + e.getSaldoAtual());
+		   }
 
-        System.out.println(c.getSaldo());
-        System.out.println(cc.getSaldo());
-        System.out.println(cp.getSaldo());
-	}
-}
+		   catch(Exception e) {
+		        System.out.println("um outro erro qualquer!");
+		   }
+		        System.out.println(joao.getSaldo());
+		  }  
+		}
